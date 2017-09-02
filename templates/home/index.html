@@ -1,8 +1,112 @@
 {% extends 'home/base.html' %}
+{% load staticfiles %}
 
 {% block title %} - Home{% endblock %}
 
 {% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'home/css/style.css' %}">
 
+<div class="top-content">
+        
+        	<!-- Top menu -->
+			<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+				<div class="container">
+					<div class="navbar-header">
+						<a class="navbar-brand" href="#">eCell USICT</a>
+					</div>
+					<!-- Collect the nav links, forms, and other content for toggling -->
+					<div id="top-navbar-1">
+						<ul class="nav navbar-nav navbar-right">
+							<li><a href="#">Home</a></li>
+							<li><a href="{% url 'event:index' %}">Events</a></li>
+							<li><a href="{% url 'blog:index' %}">Blog</a></li>
+							<li><a href="{% url 'log:login' %}">LogIN</a></li>
+							<li><a href="#">Contact</a></li>
+							<li><a href="#">Faq</a></li>
+							<li><a class="btn btn-link-3" href="{% url 'log:register' %}">Join Us</a></li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+        
+        	<div class="top-content-container">
+	        	<div class="container">
+					<div class="row">
+						<div class="col-sm-12 text">
+							<h1></h1>
+							<div class="description">
+								<p class="medium-paragraph">
+									
+								</p>
+							</div>
+						</div>
+					</div>
+	            </div>
+            </div>
+            
+</div>
+
+<div class="about-section">
+	<div class="row"></div>
+		<div class="col-md-7">
+			<h1 class="about-head">About ECell USICT</h1>
+			<div class="about-content">
+				<p>eCell USICT envisions a society of self-motivated individuals kernelled with constructive and intense entrepreneurial drive. Our sole aim is to have budding entrepreneurs coming through the ranks after taking on the challenges in this cut-throat competitive world. Further, we aim at building a strong team with an unmatched work ethic who work day and night to fulfil our goal of spreading awareness regarding entrepreneurship among all college-students and help the newly born enterprises in their ventures.
+
+				We organise Workshops and Guest Lectures periodically to create awareness about entrepreneurship and hence We function as a guide for students with creative ideas and immense zeal to convert these ideas into an enterprise. Moreover, a strong alumni network is an invaluable asset which is instrumental in providing mentorship to motivated individuals for launching their start-ups.</p>
+			</div>
+		</div>
+		<div class="col-md-5 about-image">
+			<img class="about-img" src="http://www.thefrugalmillennial.com/wp-content/uploads/2017/03/What-is-Entrepreneur.jpg">
+		</div>
+	</div>
+</div>
+
+
+<footer class="footer">
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2 footer-content">
+				<ul>					
+					<li><a href="">Home</a></li>
+					<li><a href="">About</a></li>
+					<li><a href="">Events</a></li>
+					<li><a href="">know more</a></li>
+					<li ><a href="">F.A.Q</a></li>
+					<li ><a href="">Blog</a></li>
+					<li ><a href="">Contact</a></li>
+
+				</ul>
+			</div>
+		</div>
+</footer>
+
+<script>
+	window.sr = ScrollReveal();
+	sr.reveal('.top-content',{
+		duration: 2000,
+		origin: 'top',
+	});
+	sr.reveal('.navbar',{
+		duration: 2000,
+		origin: 'top',
+	});
+	sr.reveal('.about-head',{
+		duration: 2000,
+		origin: 'left',
+	});
+	sr.reveal('.about-content',{
+		duration: 2000,
+		origin: 'right',
+	});
+	sr.reveal('.about-image',{
+		duration: 2000,
+		origin: 'right',
+	});
+	sr.reveal('.footer',{
+		duration: 2000,
+		origin: 'bottom',
+		viewFactor: 0.5,
+	});
+</script>
 
 {% endblock %}
