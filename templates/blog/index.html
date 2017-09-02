@@ -1,17 +1,83 @@
 {% extends '../home/base.html' %}
-
+{% load staticfiles %}
 {% block title %} - Blog{% endblock %}
 
 {% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'blog/css/style.css' %}">
+<div class="intro">
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2 intro-text">
+			<h1 class="intro-lead">Make something you love</h1>
+		</div>
+	</div>
+</div>
+<hr>
+<div class="blogs">
 	{% if posts %}
 		{% for post in posts %}
-			<a href="{% url 'blog:detail' post.id %}"><p>{{ post.title }}</p></a>
-			<p>{{ post.author }}</p>
+			{% if forloop.counter0|divisibleby:2 %}
+				<div class="row blog-post-light">
+					<div class="col-md-6">
+						<h2 class="blog-head-light">{{ post.title }}</h2>
+						<span>By: {{ post.author }}</span><br><br>
+						<span class="blog-peek-light">{{ post.content|truncatewords:50 }}</span><br>
+						<a href="{% url 'blog:detail' post.id %}"><button class="btn btn-primary">Read More</button></a>
+					</div>
+					<div class="col-md-6 blog-image blog-image-light"><img src="{{ post.imageUrl }}"></div>
+				</div><hr>
+			{% else %}
+				<div class="row blog-post-dark">
+					<div class="col-md-6 blog-image blog-image-dark"><img src="{{ post.imageUrl }}"></div>
+					<div class="col-md-6">
+						<h2 class="blog-head-dark">{{ post.title }}</h2>
+						<span>By: {{ post.author }}</span><br><br>
+						<span class="blog-peek-dark">{{ post.content|truncatewords:50 }}</span><br>
+						<a href="{% url 'blog:detail' post.id %}"><button class="btn btn-primary">Read More</button></a>
+					</div>
+				</div><hr>
+			{% endif %}
+</div>
+
 
 			
 		{% endfor %}
+
+		<script>
+			window.sr = ScrollReveal();
+			sr.reveal('.intro',{
+				duration: 2000,
+				origin: 'center',
+			})
+			sr.reveal('.blog-post-light',{
+				duration: 2000,
+				origin: 'right',
+				viewFactor: '0.3',
+				distance: '200px',
+			});
+			sr.reveal('.blog-image-light',{
+				duration: 2000,
+				origin: 'left',
+				viewFactor: '0.3',
+				distance: '200px',
+			});
+			sr.reveal('.blog-post-dark',{
+				duration: 2000,
+				origin: 'left',
+				viewFactor: '0.3',
+				distance: '200px',
+			});
+			sr.reveal('.blog-image-dark',{
+				duration: 2000,
+				origin: 'right',
+				viewFactor: '0.3',
+				distance: '200px',
+			});
+		</script>
+
 	{% else %}
 		<h1>No blog post yet.</h1>
 	{% endif %}
+
+
 
 {% endblock %}

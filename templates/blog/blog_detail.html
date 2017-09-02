@@ -1,13 +1,36 @@
 {% extends '../home/base.html' %}
 
+{% load staticfiles %}
+
 {% block title %} - {{ blog_detail.title }}{% endblock %}
 
 {% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'blog/css/blog_detail.css' %}">
+
 	{% if blog_detail %}
-		<h1>{{ blog_detail.title }}</h1>
-		<p>{{ blog_detail.content }}</p>
+
+		<div class="col-md-8 col-md-offset-2 blog">
+			<div class="blog-title"><h1><h1>{{ blog_detail.title }}</h1></h1></div>
+			<span>Author: {{ blog_detail.author }}</span><br>
+			<hr>
+			<div><img class="blog-image" src="{{ blog_detail.imageUrl }}"></div>
+			<span>{{ blog_detail.date }}</span>
+			<hr>
+			<div class="blog-content">
+				{{ blog_detail.content }}
+			</div>
+			<hr>
+		</div>
 
 
 	{% endif %}
+
+	<script>
+		window.sr = ScrollReveal();
+		sr.reveal('.blog',{
+			duration: 2000,
+			origin: 'center',
+		})
+	</script>
 
 {% endblock %}

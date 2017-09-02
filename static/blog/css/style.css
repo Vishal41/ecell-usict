@@ -1,0 +1,96 @@
+body, html{
+	height:100%;
+	font-family: "Ubuntu", sans-serif;
+	margin: 0;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 1.8em;
+	color: #666;
+}
+
+.intro{
+	background-attachment: fixed !important;
+}
+
+.intro {
+	position: relative;
+	opacity: 0.7;
+	background-position: center;
+	background-size: cover;
+	background-image: url("http://blog.oxforddictionaries.com/wp-content/uploads/essay-writing.jpg");
+    background-repeat: no-repeat;
+    min-height: 100% !important;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.intro-text {
+	position: absolute;
+	top: 50%;
+	width: 100%;
+	text-align: center;
+	color: #000;
+	font-size: 27px;
+	letter-spacing: 8px;
+	text-transform: uppercase;
+}
+
+
+.blogs {
+	margin-top: 20px;
+}
+
+.blog-post-dark {
+	background-color: #4d1919;
+	padding: 40px;
+	margin-right: 60px;
+	margin-left: 60px;
+}
+
+.blog-post-light {
+	background-color: #ffcccc;
+	padding: 40px;
+	margin-right: 60px;
+	margin-left: 60px;
+}
+
+.blog-image {
+	max-width: 100%;
+	max-height: 100%;
+	margin-top: 20px;
+}
+
+.blog-head-light {
+	font-family: 'Pacifico', cursive;
+	font-size: 70px;
+	color: #4d1919;
+}
+
+.blog-peek-light {
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 20px;
+	color: #4d1919;
+}
+
+.blog-head-dark {
+	font-family: 'Pacifico', cursive;
+	font-size: 70px;
+	color: #ffcccc;
+}
+
+.blog-peek-dark {
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 20px;
+	color: #ffcccc;
+}
+
+hr { 
+    display: block;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+    width: 90%
+} 
