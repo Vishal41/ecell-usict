@@ -1,0 +1,52 @@
+body {
+	font-family: "Ubuntu", sans-serif;
+	font-weight: 400;
+	text-align: center;
+}
+
+.item-img {
+	min-height: 600px;
+	min-width: 1366px;
+	filter: brightness(60%);
+	background-attachment: fixed;
+}
+
+.title {
+	margin-bottom: 2%;
+	font-size: 60px;
+}
+
+.heading {
+	margin-bottom: 10%;
+}
+
+.venue {
+	margin-bottom: 5%;
+	font-size: 35px;
+}
+
+.date {
+	font-size: 30px;
+	margin-bottom: 2%;
+}
+
+.btn {
+	min-height: 20%;
+	min-width: 20%;
+	font-size: 20px;
+}
+
+
+hr { 
+    display: block;
+    margin-top: 1em;
+    margin-bottom: 12%;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: all;
+    border-width: 10px;
+    border-radius: 10px 10px 10px 10px;
+    border-color: yellow;
+    width: 20%
+} 
+

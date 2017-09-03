@@ -14,7 +14,7 @@
 <hr>
 <div class="blogs">
 	{% if posts %}
-		{% for post in posts %}
+		{% for post in posts reversed %}
 			{% if forloop.counter0|divisibleby:2 %}
 				<div class="row blog-post-light">
 					<div class="col-md-6">
@@ -44,32 +44,32 @@
 
 		<script>
 			window.sr = ScrollReveal();
-			sr.reveal('.intro',{
+			sr.reveal('.intro-text',{
 				duration: 2000,
 				origin: 'center',
 			})
 			sr.reveal('.blog-post-light',{
 				duration: 2000,
 				origin: 'right',
-				viewFactor: '0.3',
+				viewFactor: '0.2',
 				distance: '200px',
 			});
 			sr.reveal('.blog-image-light',{
 				duration: 2000,
 				origin: 'left',
-				viewFactor: '0.3',
+				viewFactor: '0.2',
 				distance: '200px',
 			});
 			sr.reveal('.blog-post-dark',{
 				duration: 2000,
 				origin: 'left',
-				viewFactor: '0.3',
+				viewFactor: '0.2',
 				distance: '200px',
 			});
 			sr.reveal('.blog-image-dark',{
 				duration: 2000,
 				origin: 'right',
-				viewFactor: '0.3',
+				viewFactor: '0.2',
 				distance: '200px',
 			});
 		</script>

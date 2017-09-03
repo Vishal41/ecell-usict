@@ -6,7 +6,8 @@
 
 {% block content %}
 <link rel="stylesheet" type="text/css" href="{% static 'blog/css/blog_detail.css' %}">
-
+<script src="{% static 'blog/js/paper-full.js' %}" ></script>
+<script type="text/paperscript" src="{% static 'blog/js/myScript.js' %}" canvas="myCanvas"></script>
 	{% if blog_detail %}
 
 		<div class="col-md-8 col-md-offset-2 blog">
@@ -22,15 +23,14 @@
 			<hr>
 		</div>
 
-
 	{% endif %}
 
 	<script>
-		window.sr = ScrollReveal();
-		sr.reveal('.blog',{
-			duration: 2000,
-			origin: 'center',
-		})
+	window.sr = ScrollReveal();
+	sr.reveal('.blog',{
+		duration: 2000,
+		origin: 'center',
+	})
 	</script>
 
 {% endblock %}

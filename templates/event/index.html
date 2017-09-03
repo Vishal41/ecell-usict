@@ -1,14 +1,128 @@
 {% extends '../home/base.html' %}
 
+{% load staticfiles %}
+
 {% block title %} - Events{% endblock %}
 
 {% block content %}
-<h1>Events</h1>
-	{% for event in events %}
-		<a href="{% url 'event:detail' event.id %}"><h1>{{ event.title }}</h1></a>
-		<p>{{ event.date }}</p>
-		<p>{{ event.venue }}</p>
-		<p>{{ event.content }}</p>
-	{% endfor %}
+<link rel="stylesheet" type="text/css" href="{% static 'event/css/style.css' %}">
+
+
+	<div id="myCarousel" class="carousel slide container-fluid" data-ride="carousel" data-interval="false">
+
+		
+	  <!-- Indicators -->
+	  <!-- <ol class="carousel-indicators">
+	    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+	    <li data-target="#myCarousel" data-slide-to="1"></li>
+	    <li data-target="#myCarousel" data-slide-to="2"></li>
+	  </ol> -->
+
+	  <!-- Wrapper for slides -->
+	  <div class="carousel-inner">
+
+	  	{% for event in events reversed %}
+			{% if forloop.counter0 == 0 %}
+			 <div class="item active">
+			{% else %}
+			 <div class="item">
+			{% endif %}
+		     	 <img class="item-img" src="http://www.unmetro.in/wp-content/uploads/2015/04/event-1060x450.jpg" alt="Chania">
+		     	 <div class="carousel-caption container-fluid">
+		     	 	<h1 class="heading">Ecell USICT</h1>
+		     	 	<h1 class="title">{{ event.title }}</h1>
+		     	 	<hr class="bar">
+		        	<h3 class="venue">Venue: {{ event.venue }}</h3>
+		       	    <p class="date">{{ event.date }}</p>
+		       	    <a href="{% url 'event:detail' event.id %}"><button class="btn btn-success">Know More</button></a>
+		         </div>
+		     </div>
+		{% endfor %}
+	  </div>
+
+	  <!-- Left and right controls -->
+	  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+	    <span class="glyphicon glyphicon-chevron-left"></span>
+	    <span class="sr-only">Previous</span>
+	  </a>
+	  <a class="right carousel-control" href="#myCarousel" data-slide="next">
+	    <span class="glyphicon glyphicon-chevron-right"></span>
+	    <span class="sr-only">Next</span>
+	  </a>
+
+	</div>
+
+
+	<script>
+		window.sr = ScrollReveal();
+		sr.reveal('.heading',{
+			duration: 2000,
+			origin: 'top',
+			reset: true,
+		});
+
+		sr.reveal('.title',{
+			duration: 2000,
+			origin: 'right',
+			distance: '400px',
+		});
+
+		sr.reveal('.bar',{
+			duration: 2000,
+			origin: 'left',
+			distance: '400px',
+		});
+
+		sr.reveal('.venue',{
+			duration: 2000,
+			origin: 'center',
+		});
+
+		sr.reveal('.date',{
+			duration: 2000,
+			origin: 'center',
+		});
+
+		sr.reveal('.btn',{
+			duration: 2000,
+			origin: 'bottom',
+		});
+
+		$('#myCarousel').on('slide.bs.carousel',function(){
+			sr.reveal('.heading',{
+				duration: 2000,
+				origin: 'top',
+				reset: false,
+			});
+
+			sr.reveal('.title',{
+				duration: 2000,
+				origin: 'right',
+				distance: '400px',
+			});
+
+			sr.reveal('.bar',{
+				duration: 2000,
+				origin: 'left',
+				distance: '400px',
+			});
+
+			sr.reveal('.venue',{
+				duration: 2000,
+				origin: 'center',
+			});
+
+			sr.reveal('.date',{
+				duration: 2000,
+				origin: 'center',
+			});
+
+			sr.reveal('.btn',{
+				duration: 2000,
+				origin: 'bottom',
+			});
+		});
+
+	</script>
 
 {% endblock %}
