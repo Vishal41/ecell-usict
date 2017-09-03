@@ -1,17 +1,76 @@
 {% extends '../home/base.html' %}
 
+{% load staticfiles %}
+
 {% block title %} - {{ event_detail.title }} {% endblock %}
 
 {% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'event/css/event_detail.css' %}">
+<link rel="stylesheet" type="text/css" href="">
 	{% if event_detail %}
-		<h1>{{ event_detail.title }}</h1>
-		<p>{{ event_detail.date }}</p>
-		<p>{{ event_detail.venue }}</p>
-		<p>{{ event_detail.content }}</p>
+		<div class="event-content">
+			<section class="head">
+			<div class="title"><span>{{ event_detail.title }}</span></div><br>
+			<div class="big-text"><span>REGISTER NOW!</span></div>
+			<hr class="hr">
+			<div class="miss"><span>Don't miss this awesome event.</span></div>
+			</section>
+			
+			<section class="event-body">
+				<div class="text-b"><span>Venue: {{ event_detail.venue }}</span></div><br>
+				<div class="text-b"><span>{{ event_detail.date }}</span></div>
+				<hr>
+				<div class="container content">
+					<div class="body-head"><span>So What Is It?</span></div>
+					<div class="text"><p>{{ event_detail.content }}</p></div>
+				</div>
+			</section>
+		</div>
 	{% else %}
-
+	
 	<h1>No Event as of now.</h1>
 
 	{% endif %}
+
+	<footer>
+		<div class="big-text">Footer</div>
+	</footer>
+
+
+	<script>
+		window.sr = ScrollReveal();
+		sr.reveal('.title',{
+			duration: 2000,
+			origin: 'top',
+		});
+
+		sr.reveal('.big-text',{
+			duration: 2000,
+			origin: 'right',
+			distance: '200px',
+		});
+
+		sr.reveal('.hr',{
+			duration: 2000,
+			origin: 'left',
+			distance: '400px',
+		});
+
+		sr.reveal('.miss',{
+			duration: 2000,
+			origin: 'bottom',
+		});
+
+		sr.reveal('.text-b',{
+			duration: 2000,
+			origin: 'center',
+		});
+
+		sr.reveal('.content',{
+			duration: 2000,
+			origin: 'left',
+			distance: '200px',
+		});
+	</script>
 
 {% endblock %}

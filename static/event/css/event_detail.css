@@ -1,0 +1,66 @@
+body {
+	font-family: "Ubuntu", sans-serif;
+	text-align: center;
+	font-weight: 500;
+}
+
+.head{
+	background-image: url("https://webdoctor.vn/wp-content/uploads/2017/05/AAEAAQAAAAAAAAk3AAAAJDdkZDZlM2U2LTViOTEtNDhjYi1iNjRjLTJjNTllN2Q4YmEyMg.jpg");
+	min-width: 100%;
+	background-position: center;
+	color: #fff;
+	min-height: 300px;
+	background-attachment: fixed;
+}
+
+.hr {
+	display: block;
+	width: 10%;
+	border-radius: 5px 5px;
+	border-width: 7px;
+	border-color: yellow;
+}
+
+.title {
+	font-size: 50px;
+	font-weight: 900;
+}
+
+.big-text {
+	font-size: 40px;
+	font-weight: 700;
+}
+
+.miss {
+	font-size: 30px;
+	margin-top: 10%;
+}
+
+.text-b {
+	font-size: 30px;
+	margin-top: 20px;
+}
+
+.body-head {
+	font-size: 40px;
+	margin-top: 3%;
+}
+
+hr {
+	display: block;
+	width: 80%;
+	border-width: 4px;
+	border-color: #ddd;
+}
+
+.text {
+	margin-top: 3%;
+	font-size: 20px;
+	letter-spacing: 2px;
+	word-spacing: 8px;
+	line-height: 40px;
+}
+
+.content {
+	background-color: #78ccc0;
+}
